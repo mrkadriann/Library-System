@@ -1,246 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Library Management System</title>
-  <link rel="stylesheet" href="/Library system/Library.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</head>
-<body>
-  <div class="container">
-    <aside class="sidebar">
-      <div class="logo">Library Management System</div>
-      <ul class="nav">
-        <li class="nav-item active" data-tab="home">
-          <ion-icon name="home-outline"></ion-icon>
-          Home
-        </li>
-        <div class="Features">Features</div>
-        <li class="nav-item" data-tab="students">
-          <ion-icon name="people-outline"></ion-icon>
-          Manage Students
-        </li>
-        <li class="nav-item" data-tab="books">
-          <ion-icon name="book-outline"></ion-icon>
-          Manage Books
-        </li>
-        <li class="nav-item" data-tab="issuance">
-          <ion-icon name="document-text-outline"></ion-icon>
-          Book Issuance
-        </li>
-        <li class="nav-item" data-tab="return">
-          <ion-icon name="return-up-back-outline"></ion-icon>
-          Return of Book
-        </li>
-        <li class="nav-item" data-tab="view-issued">
-          <ion-icon name="eye-outline"></ion-icon>
-          View Issued Books
-        </li>
-        <li class="nav-item" data-tab="reservation">
-          <ion-icon name="calendar-outline"></ion-icon>
-          Room Reservation
-        </li>
-        <li class="nav-item" data-tab="discussion">
-          <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-          Discussion Board
-        </li>
-      </ul>
-      <div class="logout">
-        <ion-icon name="log-out-outline"></ion-icon>
-        Logout
-      </div>
-    </aside>
-
-    <main class="homepage">
-      <header class="header">
-        <div class="date">April 19, 2025 | Saturday</div>
-        <div class="admin">Name of Admin</div>
-        <div class="avatar"><ion-icon name="person-circle-outline"></ion-icon></div>
-      </header>
-
-      <section class="content" id="home">
-        <div class="cards">
-          <div class="card"><ion-icon name="library-outline"></ion-icon> No. of Books: <span>2345</span></div>
-          <div class="card"><ion-icon name="document-outline"></ion-icon> Issued Books: <span>45</span></div>
-          <div class="card"><ion-icon name="people-outline"></ion-icon> No. of Students: <span>2345</span></div>
-          <div class="card"><ion-icon name="calendar-outline"></ion-icon> Room Reserved: <span>45</span></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="Library.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="logo">Library Management System</div>
+        <ul class="nav">
+          <li class="nav-item active" data-tab="home">
+            <ion-icon name="home-outline"></ion-icon>
+            Home
+          </li>
+          <div class="Features">Features</div>
+          <li class="nav-item" data-tab="students">
+            <ion-icon name="people-outline"></ion-icon>
+            Manage Students
+          </li>
+          <li class="nav-item" data-tab="books">
+            <ion-icon name="book-outline"></ion-icon>
+            Manage Books
+          </li>
+          <li class="nav-item" data-tab="issuance">
+            <ion-icon name="document-text-outline"></ion-icon>
+            Book Issuance
+          </li>
+          <li class="nav-item" data-tab="return">
+            <ion-icon name="return-up-back-outline"></ion-icon>
+            Return of Book
+          </li>
+          <li class="nav-item" data-tab="view-issued">
+            <ion-icon name="eye-outline"></ion-icon>
+            View Issued Books
+          </li>
+          <li class="nav-item" data-tab="reservation">
+            <ion-icon name="calendar-outline"></ion-icon>
+            Room Reservation
+          </li>
+          <li class="nav-item" data-tab="discussion">
+            <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+            Discussion Board
+          </li>
+        </ul>
+        <div class="logout">
+          <ion-icon name="log-out-outline"></ion-icon>
+          Logout
         </div>
+      </aside>
 
-        <div class="chart-table">
-          <div class="chart">Issued Book Details (chart placeholder)</div>
-          <div class="table student-table">
-            <h3>Student Details</h3>
-            <table>
-              <thead>
-                <tr><th>STUDENT ID.</th><th>NAME</th><th>COURSE</th><th>BRANCH</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>12-2222</td><td>ABC</td><td>BSIT</td><td>A1</td></tr>
-                <tr><td>12-2222</td><td>ABC</td><td>BSIT</td><td>A1</td></tr>
-                <tr><td>12-2222</td><td>ABC</td><td>BSIT</td><td>A1</td></tr>
-              </tbody>
-            </table>
-            <a href="#">See All</a>
+      <main class="homepage">
+        <header class="header">
+          <div class="date">April 19, 2025 | Saturday</div>
+          <div class="admin">Name of Admin</div>
+          <div class="avatar">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </div>
+        </header>
+
+        <section class="content" id="home">
+          <div class="cards">
+            <div class="card">
+              <ion-icon name="library-outline"></ion-icon> No. of Books:
+              <span>2345</span>
+            </div>
+            <div class="card">
+              <ion-icon name="document-outline"></ion-icon> Issued Books:
+              <span>45</span>
+            </div>
+            <div class="card">
+              <ion-icon name="people-outline"></ion-icon> No. of Students:
+              <span>2345</span>
+            </div>
+            <div class="card">
+              <ion-icon name="calendar-outline"></ion-icon> Room Reserved:
+              <span>45</span>
+            </div>
           </div>
 
-          <div class="table book-table">
-            <h3>Book Details</h3>
-            <table>
-              <thead>
-                <tr><th>BOOK NAME</th><th>NAME</th><th>AUTHOR</th><th>QUANTITY</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>Title 1</td><td>ABC</td><td>Author</td><td>5</td></tr>
-                <tr><td>Title 2</td><td>ABC</td><td>Author</td><td>3</td></tr>
-                <tr><td>Title 3</td><td>ABC</td><td>Author</td><td>7</td></tr>
-              </tbody>
-            </table>
-            <a href="#">See All</a>
-          </div>
-        </div>
-      </section>
+          <div class="chart-table">
+            <div class="chart">Issued Book Details (chart placeholder)</div>
+            <div class="table student-table">
+              <h3>Student Details</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>STUDENT ID.</th>
+                    <th>NAME</th>
+                    <th>COURSE</th>
+                    <th>BRANCH</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>12-2222</td>
+                    <td>ABC</td>
+                    <td>BSIT</td>
+                    <td>A1</td>
+                  </tr>
+                  <tr>
+                    <td>12-2222</td>
+                    <td>ABC</td>
+                    <td>BSIT</td>
+                    <td>A1</td>
+                  </tr>
+                  <tr>
+                    <td>12-2222</td>
+                    <td>ABC</td>
+                    <td>BSIT</td>
+                    <td>A1</td>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#">See All</a>
+            </div>
 
-      <!-- Updated Manage Students Section with Image Link -->
-      <section class="content" id="students" style="display: none;">
-        <div class="section-header">
-          <h1>Manage Student Records</h1>
-          <p>Track, update and organize student information easily.</p>
-          
-          <div class="search-bar">
-            <ion-icon name="search-outline"></ion-icon>
-            <input type="text" placeholder="Search">
+            <div class="table book-table">
+              <h3>Book Details</h3>
+              <table>
+                <thead>
+                  <tr>
+                    <th>BOOK NAME</th>
+                    <th>NAME</th>
+                    <th>AUTHOR</th>
+                    <th>QUANTITY</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Title 1</td>
+                    <td>ABC</td>
+                    <td>Author</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>Title 2</td>
+                    <td>ABC</td>
+                    <td>Author</td>
+                    <td>3</td>
+                  </tr>
+                  <tr>
+                    <td>Title 3</td>
+                    <td>ABC</td>
+                    <td>Author</td>
+                    <td>7</td>
+                  </tr>
+                </tbody>
+              </table>
+              <a href="#">See All</a>
+            </div>
           </div>
-        </div>
-        
-        <div class="student-container">
-          <!-- Background image as a separate element -->
-          <img src="/Library system/library student.jpg" alt="Library Background" class="student-management-background-image">
-          
-          <div class="student-form">
-            <div class="form-group">
-              <div class="form-icon">
-                <ion-icon name="card-outline"></ion-icon>
+        </section>
+
+        <!-- Updated Manage Students Section with Image Link -->
+        <section class="content" id="students" style="display: none">
+          <div class="section-header">
+            <h1>Manage Student Records</h1>
+            <p>Track, update and organize student information easily.</p>
+
+            <div class="search-bar">
+              <ion-icon name="search-outline"></ion-icon>
+              <input type="text" placeholder="Search" />
+            </div>
+          </div>
+
+          <div class="student-container">
+            <!-- Background image as a separate element -->
+            <img
+              src="library student.jpg"
+              alt="Library Background"
+              class="student-management-background-image"
+            />
+
+            <div class="student-form">
+              <div class="form-group">
+                <div class="form-icon">
+                  <ion-icon name="card-outline"></ion-icon>
+                </div>
+                <input type="text" placeholder="Enter Student ID" />
               </div>
-              <input type="text" placeholder="Enter Student ID">
-            </div>
-            
-            <div class="form-group">
-              <div class="form-icon">
-                <ion-icon name="person-outline"></ion-icon>
+
+              <div class="form-group">
+                <div class="form-icon">
+                  <ion-icon name="person-outline"></ion-icon>
+                </div>
+                <input type="text" placeholder="Name" />
               </div>
-              <input type="text" placeholder="Name">
-            </div>
-            
-<!-- Course Dropdown -->
-<div class="form-group">
-  <div class="form-icon">
-    <ion-icon name="school-outline"></ion-icon>
-  </div>
-  <select>
-    <option disabled selected>Select Course</option>
-    <option value="BSA">BSA</option>
-    <option value="BS Entrep">BS Entrep</option>
-    <option value="BECEd">BECEd</option>
-    <option value="BSECE">BSECE</option>
-    <option value="BSIE">BSIE</option>
-    <option value="BSIT">BSIT</option>
-  </select>
-</div>
 
-<!-- Branch Dropdown -->
-<div class="form-group">
-  <div class="form-icon">
-    <ion-icon name="location-outline"></ion-icon>
-  </div>
-  <select>
-    <option disabled selected>Select Branch</option>
-    <option value="San Bartolome">San Bartolome</option>
-    <option value="San Francisco">San Francisco</option>
-    <option value="Batasan">Batasan</option>
-  </select>
-</div>
+              <!-- Course Dropdown -->
+              <div class="form-group">
+                <div class="form-icon">
+                  <ion-icon name="school-outline"></ion-icon>
+                </div>
+                <select>
+                  <option disabled selected>Select Course</option>
+                  <option value="BSA">BSA</option>
+                  <option value="BS Entrep">BS Entrep</option>
+                  <option value="BECEd">BECEd</option>
+                  <option value="BSECE">BSECE</option>
+                  <option value="BSIE">BSIE</option>
+                  <option value="BSIT">BSIT</option>
+                </select>
+              </div>
 
-            
-            <div class="form-buttons">
-              <button class="add-btn">Add</button>
-              <button class="update-btn">Update</button>
-              <button class="delete-btn">Delete</button>
+              <!-- Branch Dropdown -->
+              <div class="form-group">
+                <div class="form-icon">
+                  <ion-icon name="location-outline"></ion-icon>
+                </div>
+                <select>
+                  <option disabled selected>Select Branch</option>
+                  <option value="San Bartolome">San Bartolome</option>
+                  <option value="San Francisco">San Francisco</option>
+                  <option value="Batasan">Batasan</option>
+                </select>
+              </div>
+
+              <div class="form-buttons">
+                <button class="add-btn">Add</button>
+                <button class="update-btn">Update</button>
+                <button class="delete-btn">Delete</button>
+              </div>
             </div>
-          </div>
-          
-          <div class="student-table">
-            <table>
-              <thead>
-                <tr>
-                  <th>Student ID</th>
-                  <th>Name</th>
-                  <th>Course</th>
-                  <th>Branch</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>23-2323</td>
-                  <td>Jhoanna</td>
-                  <td>IT</td>
-                  <td>SB</td>
-                </tr>
-                <tr>
-                  <td>23-2367</td>
-                  <td>Coleen</td>
-                  <td>Entrep</td>
-                  <td>Batasan</td>
-                </tr>
-                <tr>
-                  <td>23-2367</td>
-                  <td>Raffy</td>
-                  <td>IE</td>
-                  <td>SF</td>
-                </tr>
-                <tr>
-                  <td>23-2345</td>
-                  <td>Francess</td>
-                  <td>IT</td>
-                  <td>SB</td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="see-all">
-              <a href="#">See all</a>
+
+            <div class="student-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Branch</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>23-2323</td>
+                    <td>Jhoanna</td>
+                    <td>IT</td>
+                    <td>SB</td>
+                  </tr>
+                  <tr>
+                    <td>23-2367</td>
+                    <td>Coleen</td>
+                    <td>Entrep</td>
+                    <td>Batasan</td>
+                  </tr>
+                  <tr>
+                    <td>23-2367</td>
+                    <td>Raffy</td>
+                    <td>IE</td>
+                    <td>SF</td>
+                  </tr>
+                  <tr>
+                    <td>23-2345</td>
+                    <td>Francess</td>
+                    <td>IT</td>
+                    <td>SB</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="see-all">
+                <a href="#">See all</a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-      
-      <!-- Placeholder sections -->
-      <section class="content" id="books" style="display: none;">Manage Books Section</section>
-      <section class="content" id="issuance" style="display: none;">Book Issuance Section</section>
-      <section class="content" id="return" style="display: none;">Return of Book Section</section>
-      <section class="content" id="view-issued" style="display: none;">View Issued Books Section</section>
-      <section class="content" id="reservation" style="display: none;">Room Reservation Section</section>
-      <section class="content" id="discussion" style="display: none;">Discussion Board Section</section>
-    </main>
-  </div>
+        </section>
 
-  <script>
-    const tabs = document.querySelectorAll('.nav-item');
-    const sections = document.querySelectorAll('.content');
+        <!-- Manage Books Section -->
+        <section class="content" id="books" style="display: none">
+          <div class="section-header">
+            <h1>Manage Book Inventory</h1>
+            <p>Track, update and organize the book collection easily.</p>
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        const target = tab.dataset.tab;
-        sections.forEach(section => {
-          section.style.display = section.id === target ? 'block' : 'none';
+            <div class="search-bar">
+              <ion-icon name="search-outline"></ion-icon>
+              <input type="text" placeholder="Search" />
+            </div>
+          </div>
+
+          <div class="book-container">
+            <!-- Background image as a separate element -->
+            <img
+              src="img\bookshelf-full.jpg"
+              alt="Bookshelf Background"
+              class="student-management-background-image"
+            />
+
+            <div class="book-form">
+              <div class="form-group">
+                <div class="form-icon">
+                  <ion-icon name="card-outline"></ion-icon>
+                </div>
+                <input type="text" placeholder="Enter Book ID" />
+              </div>
+
+              <div class="form-group">
+                <div class="form-icon">
+                  <ion-icon name="book-outline"></ion-icon>
+                </div>
+                <input type="text" placeholder="Name" />
+              </div>
+
+              <div class="form-group">
+                <div class="form-icon">
+                  <ion-icon name="person-outline"></ion-icon>
+                </div>
+                <input type="text" placeholder="Author Name" />
+              </div>
+
+              <div class="form-group">
+                <div class="form-icon">
+                  <ion-icon name="library-outline"></ion-icon>
+                </div>
+                <input type="number" placeholder="Quantity" />
+              </div>
+
+              <div class="form-buttons">
+                <button class="add-btn">Add</button>
+                <button class="update-btn">Update</button>
+                <button class="delete-btn">Delete</button>
+              </div>
+            </div>
+
+            <div class="book-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Book ID</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Montello High</td>
+                    <td>Yshiinnn</td>
+                    <td>9</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>He's into Her</td>
+                    <td>Maxinejiji</td>
+                    <td>10</td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Project Loki</td>
+                    <td>Ako si Ibarra</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Hell University</td>
+                    <td>KIB</td>
+                    <td>7</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="see-all">
+                <a href="#">See all</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Book Issuance Section -->
+        <section class="content" id="issuance" style="display: none">
+          <div class="section-header">
+            <h1>Book Issuance</h1>
+            <p>Issue books to students and track due dates.</p>
+          </div>
+
+          <div class="issuance-container">
+            <!-- Background image as a separate element -->
+            <img
+              src="img\books-close.webp"
+              alt="Books Background"
+              class="student-management-background-image"
+            />
+
+            <div class="card-container">
+              <!-- Book Details Card -->
+              <div class="issuance-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <ion-icon name="book-outline"></ion-icon>
+                  </div>
+                  <h2>Book Details</h2>
+                </div>
+
+                <div class="card-content">
+                  <div class="form-group">
+                    <label for="book-id">Book ID :</label>
+                    <input type="text" id="book-id" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="book-name">Book Name :</label>
+                    <input type="text" id="book-name" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Student Details Card -->
+              <div class="issuance-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <ion-icon name="person-outline"></ion-icon>
+                  </div>
+                  <h2>Student Details</h2>
+                </div>
+
+                <div class="card-content">
+                  <div class="form-group">
+                    <label for="student-id">Student ID :</label>
+                    <input type="text" id="student-id" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="student-name">Student Name :</label>
+                    <input type="text" id="student-name" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="course">Course :</label>
+                    <input type="text" id="course" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="branch">Branch</label>
+                    <input type="text" id="branch" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Issuance Details Card -->
+              <div class="issuance-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                  </div>
+                  <h2>Issuance of Book</h2>
+                </div>
+
+                <div class="card-content">
+                  <div class="form-group">
+                    <label for="issue-book-id">Book ID :</label>
+                    <input type="text" id="issue-book-id" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="issue-student-id">Student ID :</label>
+                    <input type="text" id="issue-student-id" />
+                  </div>
+
+                  <div class="date-group">
+                    <div class="form-group date-field">
+                      <label for="issue-date">Issue Date :</label>
+                      <div class="date-input">
+                        <input type="text" id="issue-date" />
+                        <ion-icon name="calendar-outline"></ion-icon>
+                      </div>
+                    </div>
+
+                    <div class="form-group date-field">
+                      <label for="due-date">Due Date :</label>
+                      <div class="date-input">
+                        <input type="text" id="due-date" />
+                        <ion-icon name="calendar-outline"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="issue-btn">Issue Book</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Return of Book Section -->
+        <section class="content" id="return" style="display: none">
+          <div class="section-header">
+            <h1>Return of Book</h1>
+            <p>Process returned books and update inventory.</p>
+          </div>
+
+          <div class="return-container">
+            <!-- Background image as a separate element -->
+            <img
+              src="img\stack-of-books.jpg"
+              alt="Stack of Books Background"
+              class="return-background-image"
+            />
+
+            <div class="card-container">
+              <!-- Issued Book Details Card -->
+              <div class="return-card blue-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <ion-icon name="library-outline"></ion-icon>
+                  </div>
+                  <h2>Issued Book Details</h2>
+                </div>
+
+                <div class="card-content">
+                  <div class="form-group">
+                    <label>Issue ID :</label>
+                    <span class="info-text"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Book Name :</label>
+                    <span class="info-text"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Student Name :</label>
+                    <span class="info-text"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Issue Date :</label>
+                    <span class="info-text"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Due Date :</label>
+                    <span class="info-text"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Return Book Card -->
+              <div class="return-card">
+                <div class="card-header">
+                  <div class="card-icon">
+                    <ion-icon name="book-outline"></ion-icon>
+                  </div>
+                  <h2>Return of Book</h2>
+                </div>
+
+                <div class="card-content">
+                  <div class="form-group">
+                    <label for="return-book-id">Book ID :</label>
+                    <input type="text" id="return-book-id" />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="return-student-name">Student Name :</label>
+                    <input type="text" id="return-student-name" />
+                  </div>
+
+                  <div class="return-buttons">
+                    <button class="find-btn">FIND DETAILS</button>
+                    <button class="return-btn">RETURN BOOK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Placeholder sections -->
+        <section class="content" id="view-issued" style="display: none">
+          View Issued Books Section
+        </section>
+        <section class="content" id="reservation" style="display: none">
+          Room Reservation Section
+        </section>
+        <section class="content" id="discussion" style="display: none">
+          Discussion Board Section
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const tabs = document.querySelectorAll(".nav-item");
+      const sections = document.querySelectorAll(".content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          tab.classList.add("active");
+          const target = tab.dataset.tab;
+          sections.forEach((section) => {
+            section.style.display = section.id === target ? "block" : "none";
+          });
         });
       });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
