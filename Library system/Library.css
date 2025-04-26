@@ -1,0 +1,365 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #0a2351;
+  color: white;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Features {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.nav {
+  list-style: none;
+}
+
+.nav-item {
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s;
+  margin-bottom: 0.3rem;
+}
+
+.nav-item:hover, .nav-item.active {
+  background-color: #f5f5dc;
+  color: #0a2351;
+}
+
+.logout {
+  margin-top: auto;
+  padding: 12px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: red;
+  border-radius: 12px;
+}
+
+/* Main area */
+.homepage {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: #eaeaea;
+}
+
+.header {
+  background-color: #0a2351;
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin {
+  display: flex;
+  margin-left: 45rem;
+}
+
+.avatar ion-icon {
+  font-size: 30px;
+  margin-right: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.content {
+  padding: 20px 30px;
+  overflow-y: auto;
+}
+
+/* Dashboard */
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: #1c3766;
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  flex: 1;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card ion-icon {
+  font-size: 28px;
+}
+
+/* Tables & chart */
+.chart-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.chart {
+  flex: 1 1 45%;
+  height: 250px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: #999;
+}
+
+.table {
+  flex: 1 1 45%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.table h3 {
+  margin-bottom: 10px;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th, .table td {
+  border: 1px solid #dac0a3;
+  padding: 10px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #dac0a3;
+  font-weight: bold;
+}
+
+.table td {
+  background-color: #ffffff;
+}
+
+.table a {
+  font-size: 0.9rem;
+  color: #0a2351;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Manage Students Specific Styling */
+#students {
+  position: relative;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: brightness(0%);
+  padding: 20px;
+}
+
+.student-management-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+#students .section-header h1 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+#students .section-header p {
+  color: #fff;
+  margin-top: 5px;
+}
+
+#students .search-bar {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  background-color: #f5f5dc;
+  padding: 8px 15px;
+  border-radius: 20px;
+  width: 300px;
+}
+
+#students .search-bar ion-icon {
+  margin-right: 10px;
+  color: #555;
+}
+
+#students .search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  flex-grow: 1;
+}
+
+/* Form Styling */
+.student-form {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.student-form .form-group {
+  background-color: #f5f5dc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.student-form .form-group ion-icon {
+  margin-right: 10px;
+  color: #0a2351;
+  font-size: 20px;
+}
+
+.student-form input,
+.student-form select {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.student-form .form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.student-form .form-buttons button {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+/* Add Button */
+.add-btn {
+  background-color: #00ff3c;
+  color: white;
+}
+
+/* Update Button */
+.update-btn {
+  background-color: #004691;
+  color: white;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ff0019;
+  color: white;
+}
+
+/* Optional: Hover Effects */
+.add-btn:hover {
+  background-color: #00c92b;
+}
+
+.update-btn:hover {
+  background-color: #003874;
+}
+
+.delete-btn:hover {
+  background-color: #aa0011;
+}
+
+#students .student-table {
+  flex-grow: 1;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+#students .student-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#students .student-table th, #students .student-table td {
+  border: 1px solid #dac0a3;
+  padding: 10px;
+  text-align: left;
+}
+
+#students .student-table th {
+  background-color: #dac0a3;
+  font-weight: bold;
+}
+
+#students .student-table td {
+  background-color: #ffffff;
+}
+
+#students .student-table .see-all {
+  text-align: right;
+  margin-top: 10px;
+}
+
+#students .student-table .see-all a {
+  color: #000000;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+.student-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
