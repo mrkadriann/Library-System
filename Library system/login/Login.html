@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Library system/login/Login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Login Section -->
+        <div class="login-section" id="loginSection">
+            <h1 class="hello-text">HELLO</h1>
+            <p class="login-subtext">Login to your account to continue</p>
+            
+            <form action="/Library system/login/login_action.php" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="User Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="passwordField" name="password" placeholder="Password" required>
+                </div>
+                <button type="button" class="password-toggle" id="passwordToggle">
+                    <ion-icon name="eye-outline" id="eyeIcon"></ion-icon>
+                    <ion-icon name="eye-off-outline" id="eyeOffIcon" style="display: none;"></ion-icon>
+                </button>
+                <div class="forgot-password">
+                    <a href="#">Forgot your Password?</a>
+                </div>
+                <button type="submit" class="btn-login">LOG IN</button>
+            </form>
+            
+            <p class="signup-text">Don't have an account? <a href="#" id="switchToRegister">Sign up</a></p>
+        </div>
+        
+        <!-- Register Section -->
+        <div class="register-section" id="registerSection" style="display: none;">
+            <h1 class="hello-text">WELCOME</h1>
+            <p class="login-subtext">Create your account to get started</p>
+            
+            <form action="/Library system/login/register_action.php" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="username" placeholder="User Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Student-number" placeholder="Student Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="regPasswordField" name="password" placeholder="Password" required>
+                    <button type="button" class="password-toggle" id="regPasswordToggle">
+                        <ion-icon name="eye-outline" id="regEyeIcon"></ion-icon>
+                        <ion-icon name="eye-off-outline" id="regEyeOffIcon" style="display: none;"></ion-icon>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" id="confirmPasswordField" name="confirm_password" placeholder="Confirm Password" required>
+                    <button type="button" class="password-toggle" id="confirmPasswordToggle">
+                        <ion-icon name="eye-outline" id="confirmEyeIcon"></ion-icon>
+                        <ion-icon name="eye-off-outline" id="confirmEyeOffIcon" style="display: none;"></ion-icon>
+                    </button>
+                </div>
+                <button type="submit" class="btn-login">REGISTER</button>
+            </form>
+            
+            <p class="signup-text">Already have an account? <a href="#" id="switchToLogin">Log in</a></p>
+        </div>
+        
+        <div class="hero-section">
+            <img src="/Library system/library.jpeg" alt="Hero Image" class="hero-img">
+            <div class="hero-overlay">
+                <div class="welcome-text">
+                    WELCOME<br>BACK !
+                </div>
+                <p class="lyrics">
+                    Young and he fine and he tall and he handsome<br>
+                    Talkin' so fine, I might hold it for ransom<br>
+                    Put it in drive, I'm not shy, I might let ya<br>
+                    Cruise all night
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginSection = document.getElementById('loginSection');
+            const registerSection = document.getElementById('registerSection');
+            const switchToRegister = document.getElementById('switchToRegister');
+            const switchToLogin = document.getElementById('switchToLogin');
+            
+            // Password toggle elements for login
+            const passwordField = document.getElementById('passwordField');
+            const passwordToggle = document.getElementById('passwordToggle');
+            const eyeIcon = document.getElementById('eyeIcon');
+            const eyeOffIcon = document.getElementById('eyeOffIcon');
+            
+            // Password toggle elements for registration
+            const regPasswordField = document.getElementById('regPasswordField');
+            const regPasswordToggle = document.getElementById('regPasswordToggle');
+            const regEyeIcon = document.getElementById('regEyeIcon');
+            const regEyeOffIcon = document.getElementById('regEyeOffIcon');
+            
+            // Confirm password toggle elements
+            const confirmPasswordField = document.getElementById('confirmPasswordField');
+            const confirmPasswordToggle = document.getElementById('confirmPasswordToggle');
+            const confirmEyeIcon = document.getElementById('confirmEyeIcon');
+            const confirmEyeOffIcon = document.getElementById('confirmEyeOffIcon');
+            
+            // Switch to Register Section
+            switchToRegister.addEventListener('click', function(event) {
+                event.preventDefault();
+                loginSection.style.display = 'none';
+                registerSection.style.display = 'block';
+            });
+
+            // Switch to Login Section
+            switchToLogin.addEventListener('click', function(event) {
+                event.preventDefault();
+                registerSection.style.display = 'none';
+                loginSection.style.display = 'block';
+            });
+
+            // Login password visibility toggle functionality
+            passwordToggle.addEventListener('click', function() {
+                if (passwordField.type === 'password') {
+                    passwordField.type = 'text';
+                    eyeIcon.style.display = 'none';
+                    eyeOffIcon.style.display = 'block';
+                } else {
+                    passwordField.type = 'password';
+                    eyeIcon.style.display = 'block';
+                    eyeOffIcon.style.display = 'none';
+                }
+            });
+            
+            // Register password visibility toggle functionality
+            regPasswordToggle.addEventListener('click', function() {
+                if (regPasswordField.type === 'password') {
+                    regPasswordField.type = 'text';
+                    regEyeIcon.style.display = 'none';
+                    regEyeOffIcon.style.display = 'block';
+                } else {
+                    regPasswordField.type = 'password';
+                    regEyeIcon.style.display = 'block';
+                    regEyeOffIcon.style.display = 'none';
+                }
+            });
+            
+            // Confirm password visibility toggle functionality
+            confirmPasswordToggle.addEventListener('click', function() {
+                if (confirmPasswordField.type === 'password') {
+                    confirmPasswordField.type = 'text';
+                    confirmEyeIcon.style.display = 'none';
+                    confirmEyeOffIcon.style.display = 'block';
+                } else {
+                    confirmPasswordField.type = 'password';
+                    confirmEyeIcon.style.display = 'block';
+                    confirmEyeOffIcon.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
