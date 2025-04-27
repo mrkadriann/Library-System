@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room Reservation Details</title>
+  <link rel="stylesheet" type="text/css" href="css/reservation_details.css">
+</head>
+<body>
+
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/93/93634.png" alt="Back" onclick="goBack()">
+    
+    <img src="img/eto.png" alt="Reserve" class="reserve-icon">
+    
+    <h1>Room Reservation Details</h1>
+  </header>
+  
+
+<div class="search-bar">
+    <label for="studentId">Student ID:</label>
+    <input type="text" id="studentId" placeholder="Enter Student ID">
+
+    <label for="reservationDate">Date:</label>
+    <input type="date" id="reservationDate">
+
+    <label for="startTime">Start Time:</label>
+    <input type="time" id="startTime">
+
+    <label for="endTime">End Time:</label>
+    <input type="time" id="endTime">
+
+    <button onclick="addReservation()">Add Reservation</button>
+</div>
+
+
+
+
+<table id="reservationTable">
+  <thead>
+    <tr>
+      <th>Room No.</th>
+      <th>Student ID</th>
+      <th>Student Name</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Time Coverage</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody id="reservationTableBody">
+    <!-- Dynamic rows injected by JS -->
+  </tbody>
+</table>
+
+<script src="js/reservation_details.js"></script>
+
+</body>
+</html>

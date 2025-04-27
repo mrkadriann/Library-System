@@ -1,0 +1,217 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* General */
+  body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    height: 100vh;
+    background-color: #f9f9f9;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 350px;
+    background-color: #dac0a3;
+    padding: 100px 20px 30px 20px; /* top padding is bigger for header overlap */
+    display:block;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 0px;
+    position: relative;
+  }
+  
+  /* Sidebar Header - Home Page */
+  .sidebar-header {
+    background-color: #002244;
+    color: white;
+    padding: 12px 120px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    margin-bottom: 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    margin-top: 5rem;
+  }
+  
+  .home-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .home-text {
+    font-weight:bold;
+    font-size: 24px;
+  }
+  
+  /* Features */
+  .sidebar h2 {
+    font-size: 20px;
+    font-weight: lighter;
+    color: #333;
+   
+    margin-left: 10px;
+    margin-top: 200px;
+  }
+  
+  .feature-card {
+    background-color: #e6d0af;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+    top:50px
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .feature-card img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .logout-btn {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #002244;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22rem;
+  }
+  
+  .logout-icon {
+    width: 20px;
+  }
+  
+  /* Main Content */
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header */
+  .header {
+    background-color: #002244;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10; /* para nasa ibabaw */
+  }
+  
+  .menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  .title {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  
+  .date-today {
+    position: absolute;
+    right: 40px;
+    bottom: -20px;
+    font-size: 15px;
+    color: #ddd;
+  }
+  
+  /* Welcome Section */
+  .welcome-section {
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 350px 50px 50px;
+    flex-grow: 1;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .welcome-section h1 {
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+  
+  /* Cards */
+  .cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+  
+  .card {
+    background-color: rgba(230, 208, 175, 0.95);
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 280px;
+    color: #002244;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+  }
+  
+  .card img {
+    width: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .card h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  

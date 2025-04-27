@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Issued Book Details</title>
+  <link rel="stylesheet" type="text/css" href="css/Issued_book.css">
+</head>
+<body>
+
+<header>
+  <img src="https://cdn-icons-png.flaticon.com/512/93/93634.png" alt="Back" onclick="goBack()">
+
+  <img src="img/librew.png" alt="Reserve" class="reserve-icon">
+
+  <h1>Issued Book Details</h1>
+</header>
+
+<div class="search-bar">
+    <label for="issuedDate">Issued Date:</label>
+    <input type="date" id="issuedDate">
+    
+    <label for="dueDate">Due Date:</label>
+    <input type="date" id="dueDate">
+    
+    <button onclick="searchBooks()">SEARCH</button>
+  </div>
+
+  <table id="bookTable">
+    <thead>
+      <tr>
+        <th>Issue ID</th>
+        <th>Book Name</th>
+        <th>Student Name</th>
+        <th>Issue Date</th>
+        <th>Due Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody id="bookTableBody">
+      <!-- Rows will be injected by JS -->
+    </tbody>
+  </table>
+  
+
+<Script src="js/Issued_book.js"></Script>
+
+</body>
+</html>
